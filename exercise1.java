@@ -20,7 +20,7 @@ public class exercise1 {
         String website = scan.nextLine();
 
         // Provide regex pattern
-        pattern = Pattern.compile("(?:www\\.)[a-zA-Z0-9@:%._~#=]{2,256}\\.(?:com)");
+        pattern = Pattern.compile("(www\\.)\\w+\\.(com)");
 
         match = pattern.matcher(website);
 
@@ -85,7 +85,7 @@ public class exercise1 {
 
         String password = scan.nextLine();
 
-        pattern = Pattern.compile("(?=.*[\\d])[^ELIZR].{10,}");
+        pattern = Pattern.compile("(?=.*[\\w])(?=.*[!@#$%^&*])[^ELIZR].{10,}");
 
         match = pattern.matcher(password);
 
@@ -101,7 +101,7 @@ public class exercise1 {
         System.out.println("5. Replacing Text");
         String phonenumbers = "+6391512345456, 0917123561234, +639190011223, 0915456213461";
 
-        phonenumbers = phonenumbers.replaceAll("\\b(?:0)", "+63");
+        phonenumbers = phonenumbers.replaceAll("\\b(0)", "+63");
 
         System.out.println(phonenumbers);
 
